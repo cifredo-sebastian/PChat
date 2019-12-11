@@ -1,0 +1,163 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ID
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> SET LPAREN NUMBER PERIOD NUMBER PERIOD NUMBER PERIOD NUMBER RPAREN
+Rule 2     expression -> CONNECT
+Rule 3     expression -> OPEN
+Rule 4     expression -> CLOSE
+Rule 5     expression -> SEND STRING
+
+Terminals, with rules where they appear
+
+CLOSE                : 4
+CONNECT              : 2
+ID                   : 
+LPAREN               : 1
+NUMBER               : 1 1 1 1
+OPEN                 : 3
+PERIOD               : 1 1 1
+RPAREN               : 1
+SEND                 : 5
+SET                  : 1
+STRING               : 5
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . SET LPAREN NUMBER PERIOD NUMBER PERIOD NUMBER PERIOD NUMBER RPAREN
+    (2) expression -> . CONNECT
+    (3) expression -> . OPEN
+    (4) expression -> . CLOSE
+    (5) expression -> . SEND STRING
+
+    SET             shift and go to state 2
+    CONNECT         shift and go to state 3
+    OPEN            shift and go to state 4
+    CLOSE           shift and go to state 5
+    SEND            shift and go to state 6
+
+    expression                     shift and go to state 1
+
+state 1
+
+    (0) S' -> expression .
+
+
+
+state 2
+
+    (1) expression -> SET . LPAREN NUMBER PERIOD NUMBER PERIOD NUMBER PERIOD NUMBER RPAREN
+
+    LPAREN          shift and go to state 7
+
+
+state 3
+
+    (2) expression -> CONNECT .
+
+    $end            reduce using rule 2 (expression -> CONNECT .)
+
+
+state 4
+
+    (3) expression -> OPEN .
+
+    $end            reduce using rule 3 (expression -> OPEN .)
+
+
+state 5
+
+    (4) expression -> CLOSE .
+
+    $end            reduce using rule 4 (expression -> CLOSE .)
+
+
+state 6
+
+    (5) expression -> SEND . STRING
+
+    STRING          shift and go to state 8
+
+
+state 7
+
+    (1) expression -> SET LPAREN . NUMBER PERIOD NUMBER PERIOD NUMBER PERIOD NUMBER RPAREN
+
+    NUMBER          shift and go to state 9
+
+
+state 8
+
+    (5) expression -> SEND STRING .
+
+    $end            reduce using rule 5 (expression -> SEND STRING .)
+
+
+state 9
+
+    (1) expression -> SET LPAREN NUMBER . PERIOD NUMBER PERIOD NUMBER PERIOD NUMBER RPAREN
+
+    PERIOD          shift and go to state 10
+
+
+state 10
+
+    (1) expression -> SET LPAREN NUMBER PERIOD . NUMBER PERIOD NUMBER PERIOD NUMBER RPAREN
+
+    NUMBER          shift and go to state 11
+
+
+state 11
+
+    (1) expression -> SET LPAREN NUMBER PERIOD NUMBER . PERIOD NUMBER PERIOD NUMBER RPAREN
+
+    PERIOD          shift and go to state 12
+
+
+state 12
+
+    (1) expression -> SET LPAREN NUMBER PERIOD NUMBER PERIOD . NUMBER PERIOD NUMBER RPAREN
+
+    NUMBER          shift and go to state 13
+
+
+state 13
+
+    (1) expression -> SET LPAREN NUMBER PERIOD NUMBER PERIOD NUMBER . PERIOD NUMBER RPAREN
+
+    PERIOD          shift and go to state 14
+
+
+state 14
+
+    (1) expression -> SET LPAREN NUMBER PERIOD NUMBER PERIOD NUMBER PERIOD . NUMBER RPAREN
+
+    NUMBER          shift and go to state 15
+
+
+state 15
+
+    (1) expression -> SET LPAREN NUMBER PERIOD NUMBER PERIOD NUMBER PERIOD NUMBER . RPAREN
+
+    RPAREN          shift and go to state 16
+
+
+state 16
+
+    (1) expression -> SET LPAREN NUMBER PERIOD NUMBER PERIOD NUMBER PERIOD NUMBER RPAREN .
+
+    $end            reduce using rule 1 (expression -> SET LPAREN NUMBER PERIOD NUMBER PERIOD NUMBER PERIOD NUMBER RPAREN .)
+
