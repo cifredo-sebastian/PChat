@@ -30,5 +30,6 @@
 
 ###### Developers
 Sebastian Cifredo
+
 Carlos Machin
 Project for University of Puerto Rico in Mayaguez Programming Languages course by Dr. Wilson Rivera.
