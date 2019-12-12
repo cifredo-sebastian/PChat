@@ -27,3 +27,8 @@
   3.	Write connect to initiate connection between servers.
   4.	Write send followed by your message enclosed between single quotation marks (e.g. send ‘hello’).
   5.	Write close to terminate connection once you’re finished.
+
+###### Developers
+Sebastian Cifredo
+Carlos Machin
+Project for University of Puerto Rico in Mayaguez Programming Languages course by Dr. Wilson Rivera.
